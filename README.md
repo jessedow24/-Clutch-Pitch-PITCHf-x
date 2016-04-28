@@ -45,24 +45,24 @@ This data was dirty as the rest.  I used Pandas to clean and eventually merge wi
 
 Now I had my dataset, I had to incorporate further cleaning.  Prepping the data for supervised machine learning models, I took the following steps:
 
-* Use domain knowledge to make binning decisions, e.g. binning pitch types as "slider", "curveball", "fastball", "changeup", and make sure there was not a minority class problem (there was not, in this case).
-* Dummify classification features, e.g. "sky" (dome, cloudy, overcast, sunny)
-* One-hot-encode my dependent variable, breaking up into 4 features ("ball", "call_strike", "swg_strike", "contact")
-* Add complementary features, e.g. adding a "first pitch" boolean feature to account for the fact that for the first pitch of the inning, the values for the "delta_[pitchInfo]" were 0.
+* Used domain knowledge to make binning decisions, e.g. generalizing multiple pitch types as "slider", "curveball", "fastball", "changeup", and made sure there was not a minority class problem (there was not, in this case).
+* Dummified classification features, e.g. "sky" (dome, cloudy, overcast, sunny)
+* One-hot-encoded my dependent variable, breaking up pitch_outcome into 4 features ("ball", "call_strike", "swg_strike", "contact")
+* Added complementary features, e.g. added a "first pitch" boolean feature to account for the fact that for the first pitch of the inning, the values for the "delta_[pitchInfo]" were 0.
 
 <img alt="Predict" src="slideshow/4.png" width=450>
 
 # Creating non-parametric, supervised models
 
-With the data complete, it was time to create models.  Models tested were:
+With the data complete, the next step was to create models.  Models tested were:
 
 * Random Forest Classifier ([SKLearn](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html))
 * Gradient Boost ([XGBoost](http://xgboost.readthedocs.org/en/latest/model.html))
 * Neural Network ([Keras](http://keras.io/))
 
-The code for these models is here: (*run_random_forest.py*, *run_XGboost.py*, *run_neural_net.py*), and the models themselves are saved as .pkl (pickle) files which can be unpacked and used to make predictions for fresh data.
+The code for these models is here: (*run_random_forest.py*, *run_XGboost.py*, *run_neural_net.py*), and the models themselves are saved as .pkl (pickle) files which can be unpacked and used to make predictions on fresh data.
 
-For the ensemble methods, I used a gridsearch to determine the ideal hyperparameters.  For the Neural Net, I used hyper-paramaters appropriate for a 4-category classifier.
+For the ensemble methods, I used a gridsearch to optimize hyperparameters.  For the neural net, I used hyper-paramaters appropriate for a 4-category classifier.
 
 The feature importance from the random forest was used to provide a quick snapshot of what was going on with my data.
 
@@ -77,9 +77,9 @@ Ambivalent to the type of error (false positive or negative)(I had no cost matri
 <img alt="Heatmap: prediction" src="slideshow/6.png" width=450>
 
 Above is the result of plotting the outcomes predicted by my model.  The process:
-1. Select a random pitch from my hold-out data 
-2. Create data for 4 simulated pitch types, each thrown to one of 25 areas in the strike zone, for a total of 100 predicted zones.  These simulated values were derived from the aggregates of the pitcher who threw the pitch, given the pitch type (the **GroupBy** functionality in Pandas).
-3. Use Matplotlib and Seaborn to create the heatmap
+1. Selected a random pitch from my hold-out data 
+2. Created data for 4 simulated pitch types, each thrown to one of 25 areas in the strike zone, for a total of 100 predicted zones.  These simulated values were derived from the aggregates of the pitcher who threw the pitch, given the pitch type (the **GroupBy** functionality in Pandas).
+3. Used Matplotlib and Seaborn to create the heatmap
 
 # Comparison of heatmap and result of pitch
 
