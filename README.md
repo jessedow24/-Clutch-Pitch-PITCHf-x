@@ -5,7 +5,7 @@
 
 ### PITCHf/x
 
-Introduced in 2006 by Major League Baseball and Sportsvision, Inc., pitchF/X ollects highly detailed data of every pitch thrown in every MLB game, including speed, location, spin, movement, etc.
+Introduced in 2006 by Major League Baseball and Sportsvision, Inc., pitchF/X collects highly detailed data of every pitch thrown in every MLB game, including speed, location, spin, movement, and more.
 
 <img alt="Example of PITCHf/x" src="slideshow/2.png" width=450>
 
