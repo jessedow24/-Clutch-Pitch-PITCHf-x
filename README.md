@@ -77,8 +77,11 @@ Ambivalent to the type of error (false positive or negative)(I had no cost matri
 <img alt="Heatmap: prediction" src="slideshow/6.png" width=450>
 
 Above is the result of plotting the outcomes predicted by my model.  The process:
+
 1. Selected a random pitch from my hold-out data 
+
 2. Created data for 4 simulated pitch types, each thrown to one of 25 areas in the strike zone, for a total of 100 predicted zones.  These simulated values were derived from the aggregates of the pitcher who threw the pitch, given the pitch type (the **GroupBy** functionality in Pandas).
+
 3. Used Matplotlib and Seaborn to create the heatmap
 
 # Comparison of heatmap and result of pitch
