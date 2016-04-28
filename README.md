@@ -24,12 +24,12 @@ Big and messy, I loaded this into a Python Pandas dataframe for easy manipulatio
 ###2. Game-by-game data
 Source: [Retrosheet](http://www.retrosheet.org/game.htm)
 
-Again, this is a portion of the data for a single game for a single team for a single year.  
+This is a portion of the data for a single game for a single team for a single year.  As you can see, parsing was essential. 
 
-<img alt="messy data 2/2" src="slideshow/play_by_play.png" width=300>
+<img alt="messy data 2/2" src="slideshow/play_by_play.png" width=300, height=300>
 
 Since I wanted only weather data, I parsed these files automatically using a custom Python script (*parse_weather_info.py*)
-You might notice in the script, as the data I wanted was parsed, I fed it into a Mongo database.  Then, I exported it as a .csv to Pandas (.csv was more convenient than .json).
+As the data I wanted was parsed, I fed it into a Mongo database.  Then, I exported it as a .csv to Pandas (.csv was more convenient than .json).
 
 
 ###3. Batter performance data
