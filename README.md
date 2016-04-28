@@ -35,7 +35,7 @@ As the data I wanted was parsed, I fed it into a Mongo database.  Then, I export
 ###3. Batter performance data
 Source: [Retrosheet](http://www.retrosheet.org/gamelogs/index.html), [Smart Fantasy Baseball](http://www.smartfantasybaseball.com/tools/)
 
-This data is similarly messey to the other two.  I used Pandas to clean and eventually merge with my master dataframe.
+This data was dirty as the rest.  I used Pandas to clean and eventually merge with my master dataframe.
 
 <img alt="Cleaning Data" src="slideshow/3.png" width=450>
 
